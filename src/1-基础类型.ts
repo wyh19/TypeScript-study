@@ -25,5 +25,9 @@ let list2:Array<number> = [1,2,3];
 let x:[string,number] = ['hello',10];
 //通过索引获取的值也是限定好类型的
 
+//枚举
+enum Color {Red, Green, Blue}
+let c: Color = Color.Green;
+
 
 
