@@ -13,20 +13,20 @@ let name1: string = 'bob';
 //注意：上面没用name做为变量，是因为和ts源码的name冲突
 name1 = 'smith';
 let age = 31;
-let sentence: string = `Hello,my name is ${ name1 },I'll be ${ age } years old.`
+let sentence: string = `Hello,my name is ${name1},I'll be ${age} years old.`
 
 // 数组
 //1:使用[]限定数组类型
-let list:number[] = [1,2,3];
+let list: number[] = [1, 2, 3];
 //2:使用数组泛型Array<number>
-let list2:Array<number> = [1,2,3];
+let list2: Array<number> = [1, 2, 3];
 
 //元组,表示一个已知元素数量和类型的数组，各类型不必相同
-let x:[string,number] = ['hello',10];
+let x: [string, number] = ['hello', 10];
 //通过索引获取的值也是限定好类型的
 
 //枚举
-enum Color {Red, Green, Blue}
+enum Color { Red, Green, Blue }
 let c: Color = Color.Green;
 
 //any
@@ -36,5 +36,22 @@ notSure = false; // okay, definitely a boolean
 let notSure1: any = 4;
 notSure1.ifItExists(); // okay, ifItExists might exist at runtime
 notSure1.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+//当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
+let list3: any[] = [1, '100', true]
+
+//void,当函数没有返回值或者定义null或者undefined时使用
+function warnUser(): void {
+    console.log('this is warning message')
+}
+let unuasble: void = null
+
+//Null 和 Undefined
+let u: undefined = undefined;
+let n: null = null;
+//默认情况下null和undefined是所有类型的子类型。 就是说你可以把 null和undefined赋值给number类型的变量。
+let un: number = u;
+
+//never
+
 
 
